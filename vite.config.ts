@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: isProduction ? "/my-app/" : "/", // Adjust base path for production (e.g., for GitHub Pages)
+    base: "/", // Adjust base path for production (e.g., for GitHub Pages)
     envPrefix: ["VITE_", "APP_"], // Allow custom prefixes for env variables
   };
 });
