@@ -9,6 +9,7 @@ module.exports = {
 		colors: {
 		  'dolo-blue': '#4D5DFB',
 		  'dolo-purple': '#BC3EFF',
+		  'dolo-navy': '#0a1a2f',
 		},
 		fontFamily: {
 		  montserrat: ['Montserrat', 'sans-serif'],
