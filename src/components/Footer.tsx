@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2">
               <img 
-                src="src\assets\DDS-Logo-no-tagline.png" // change this to your actual image path
+                src="/assets/DDS-Logo-no-tagline.png" // change this to your actual image path
                 alt="Dolo Dynamic Logo"
                 className="w-22 h-20" // tweak size as needed
               />
