@@ -1,8 +1,21 @@
 import { ArrowRight, Code, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // check initial scroll position on mount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section 
       id="home" 
@@ -59,13 +72,15 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 animate-bounce">
-          <span className="text-sm font-medium text-gray-500">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-2 h-2 bg-dolo-blue rounded-full mt-2"></div>
+        {/* Scroll indicator - only show if user is at top */}
+        {!hasScrolled && (
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 animate-bounce transition-opacity duration-500">
+            <span className="text-sm font-medium text-gray-500">Scroll Down</span>
+            <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+              <div className="w-2 h-2 bg-dolo-blue rounded-full mt-2"></div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
