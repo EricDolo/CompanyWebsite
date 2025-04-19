@@ -28,29 +28,6 @@ const Contact = () => {
     }));
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-    
-  //   // Simulate form submission
-  //   setTimeout(() => {
-  //     toast({
-  //       title: "Message sent!",
-  //       description: "We'll get back to you as soon as possible.",
-  //     });
-      
-  //     setFormData({
-  //       name: "",
-  //       email: "",
-  //       subject: "",
-  //       message: "",
-  //       service: "software"
-  //     });
-      
-  //     setIsSubmitting(false);
-  //   }, 1500);
-  // };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -58,8 +35,8 @@ const Contact = () => {
     // EmailJS send function
     emailjs
       .send(
-        "service_4pt4z8d", // Replace with your EmailJS Service ID
-        "template_aaumnbg", // Replace with your EmailJS Template ID
+        "service_4pt4z8d", 
+        "template_aaumnbg", 
         {
           name: formData.name,
           email: formData.email,
@@ -158,6 +135,10 @@ const Contact = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Sunday:</span>
+                  <span>Closed</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-medium">Public Holidays:</span>
                   <span>Closed</span>
                 </div>
               </div>
