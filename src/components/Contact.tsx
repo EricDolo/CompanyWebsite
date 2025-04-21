@@ -35,7 +35,7 @@ const Contact = () => {
     // EmailJS send function
     emailjs
       .send(
-        "service_4pt4z8d", 
+        "service_4ciwx6r", 
         "template_aaumnbg", 
         {
           name: formData.name,
@@ -77,7 +77,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5 text-dolo-blue" />,
       label: "Email",
-      value: "doloeric37@gmail.com",
+      value: "ericdolo@dolodynamicsolutions.com",
     },
     {
       icon: <Phone className="h-5 w-5 text-dolo-blue" />,
