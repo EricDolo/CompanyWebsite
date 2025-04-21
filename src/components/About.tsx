@@ -10,17 +10,17 @@ const About = () => {
     },
     { 
       icon: <Users className="h-6 w-6" />,
-      value: "5+", 
+      value: "10+", 
       label: "Happy Clients" 
     },
     { 
       icon: <Music className="h-6 w-6" />,
-      value: "10+", 
+      value: "5+", 
       label: "Events Amplified" 
     },
     { 
       icon: <Award className="h-6 w-6" />,
-      value: "1+", 
+      value: "3+", 
       label: "Years of Experience" 
     }
   ];
