@@ -246,14 +246,14 @@ const ServiceCard = ({ icon, title, description, details, className, delay }: Se
       {details && (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogContent className="max-w-2xl text-center">
-            <DialogHeader>
+            <DialogHeader className="border border-gray-200 bg-gray-50 rounded-xl p-4 shadow-sm text-center gradient-bg">
               <DialogTitle className="text-3xl text-center">{title}</DialogTitle>
               <DialogDescription className="text-gray-600 text-center">{description}</DialogDescription>
             </DialogHeader>
             <div className="mt-4 space-y-4 text-center">
               {details.map((item, i) => (
-                <div key={i}>
-                  <h5 className="text-md font-semibold text-center">{item.label}</h5>
+                <div key={i} className="border border-gray-200 bg-gray-50 rounded-xl p-4 shadow-sm text-center">
+                  <h5 className="text-md font-semibold">{item.label}</h5>
                   <p className="text-sm text-gray-600">{item.text}</p>
                 </div>
               ))}

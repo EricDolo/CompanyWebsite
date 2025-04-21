@@ -77,7 +77,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5 text-dolo-blue" />,
       label: "Email",
-      value: "ericdolo@dolodynamicsolutions.com",
+      value: "info@dolodynamicsolutions.com",
     },
     {
       icon: <Phone className="h-5 w-5 text-dolo-blue" />,
