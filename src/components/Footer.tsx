@@ -19,8 +19,7 @@ const Footer = () => {
       links: [
         { name: "About Us", href: "#about" },
         { name: "Contact", href: "#contact" },
-        { name: "Careers", href: "#" },
-        { name: "Privacy Policy", href: "#" },
+        //{ name: "Privacy Policy", href: "#" },
       ],
     },
   ];
@@ -28,7 +27,6 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, href: "https://www.facebook.com/share/1AYubX2VdK/?mibextid=wwXIfr", label: "Facebook" },
     { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/dolodynamicsolutions", label: "Instagram" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
     { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/eric-dolo/", label: "LinkedIn" },
   ];
 

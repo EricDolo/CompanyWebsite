@@ -57,7 +57,7 @@ const Contact = () => {
             email: "",
             subject: "",
             message: "",
-            service: "software",
+            service: "software", // Reset to default service
           });
           setIsSubmitting(false);
         },
@@ -86,7 +86,7 @@ const Contact = () => {
     },
     {
       icon: <MapPin className="h-5 w-5 text-dolo-blue" />,
-      label: "Location",
+      label: "Address",
       value: "Phillip Nel Park, Pretoria, 0029",
     },
   ];
