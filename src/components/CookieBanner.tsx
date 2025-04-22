@@ -18,6 +18,11 @@ const CookieBanner = ({ setOpenPrivacy, setOpenTerms }) => {
     setShowBanner(false);
   };
 
+  const handleDecline = () => {
+    localStorage.setItem("cookieConsent", "declined");
+    setShowBanner(false);
+  };
+
   if (!showBanner) return null;
 
   return (
@@ -40,9 +45,15 @@ const CookieBanner = ({ setOpenPrivacy, setOpenTerms }) => {
         </button>
         .
       </p>
-      <Button onClick={handleAccept} className="mt-2 md:mt-0">
-        Accept
-      </Button>
+      <div className="flex gap-4 mt-2 md:mt-0">
+        <Button onClick={handleAccept} className="bg-dolo-blue text-white">
+          Accept        
+        </Button>
+        <Button onClick={handleDecline} variant="destructive" className="bg-red-500 text-white">
+          Decline
+        </Button>
+      </div>
+      
     </div>
   );
 };
