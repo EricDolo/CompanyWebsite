@@ -246,7 +246,7 @@ const ServiceCard = ({ icon, title, description, details, className, delay }: Se
       {details && (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogContent className="max-w-2xl text-center">
-            <DialogHeader className="border border-gray-200 bg-gray-50 rounded-xl p-4 shadow-sm text-center gradient-bg">
+            <DialogHeader className="text-center gradient-text">
               <DialogTitle className="text-3xl text-center">{title}</DialogTitle>
               <DialogDescription className="text-gray-600 text-center">{description}</DialogDescription>
             </DialogHeader>

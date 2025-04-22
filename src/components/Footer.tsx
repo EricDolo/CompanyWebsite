@@ -1,9 +1,23 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
+
+import { Facebook, Instagram } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import PrivacyPolicyDialog from "@/components/PrivacyPolicyDialog";
 import { cn } from "@/lib/utils";
+import TermsOfServiceDialog from "./TermsOfServiceDialog";
 
 const Footer = () => {
+  const [openTerms, setOpenTerms] = useState(false);
+  const [openPrivacy, setOpenPrivacy] = useState(false);
+
   const currentYear = new Date().getFullYear();
-  
+
   const footerLinks = [
     {
       title: "Services",
@@ -19,15 +33,13 @@ const Footer = () => {
       links: [
         { name: "About Us", href: "#about" },
         { name: "Contact", href: "#contact" },
-        //{ name: "Privacy Policy", href: "#" },
       ],
     },
   ];
-  
+
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, href: "https://www.facebook.com/share/1AYubX2VdK/?mibextid=wwXIfr", label: "Facebook" },
     { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/dolodynamicsolutions", label: "Instagram" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/eric-dolo/", label: "LinkedIn" },
   ];
 
   return (
@@ -38,9 +50,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2">
               <img 
-                src="/assets/DDS-Logo-no-tagline.png" // change this to your actual image path
+                src="/assets/DDS-Logo-no-tagline.png"
                 alt="Dolo Dynamic Logo"
-                className="w-22 h-20" // tweak size as needed
+                className="w-22 h-20"
               />
             </a>
             <br/>
@@ -62,7 +74,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Links */}
           {footerLinks.map((column, colIndex) => (
             <div key={colIndex}>
@@ -82,21 +94,33 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Dolo Dynamic Solution. All rights reserved.
+            &copy; {currentYear} Dolo Dynamic Solution (Pty) Ltd. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm">
+            <button
+              onClick={() => setOpenTerms(true)}
+              className="text-gray-400 hover:text-white text-sm"
+            >
               Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm">
+            </button>
+
+            <button
+              onClick={() => setOpenPrivacy(true)}
+              className="text-gray-400 hover:text-white text-sm"
+            >
               Privacy Policy
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+
+      <PrivacyPolicyDialog open={openPrivacy} setOpen={setOpenPrivacy} />
+      <TermsOfServiceDialog open={openTerms} setOpen={setOpenTerms} />
+
     </footer>
   );
 };
